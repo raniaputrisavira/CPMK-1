@@ -1,0 +1,140 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+#1
+A <- matrix(c(1:9), 3, 3, TRUE)
+A
+```
+```{r}
+#a
+colnames(A) <- c("col1","col2","col3" )
+rownames(A) <- c("row1", "row2", "row3")
+A
+```
+```{r}
+#b
+diag(A)
+```
+```{r}
+#c
+det(A)
+```
+```{r}
+#d
+solve(A)
+```
+```{r}
+#e
+t(A)*A
+```
+```{r}
+#e
+C <- t(A) %*% A
+C
+```
+```{r}
+#f
+eigen(A)
+```
+```{r}
+#3
+M <- matrix(c(1,3,2,2,8,9), 3,2, FALSE)
+M
+```
+```{r}
+N <- matrix(c(5,8,4,2), 2,2,FALSE)
+N
+```
+```{r}
+#a
+L <- M %*%N
+L
+```
+```{r}
+#b
+K <- M %*% solve(N)
+K
+```
+```{r}
+#c
+P <- M %*% t(N)
+P
+```
+```{r}
+#d
+Q <- K + P
+Q
+```
+```{r}
+3*Q
+```
+```{r}
+#4
+R <- matrix(c(1,-2,3, 2,1,1, -3,2,-2), 3, 3, TRUE)
+R
+```
+```{r}
+r <- c(7,4,-10)
+r
+```
+```{r}
+#a
+showEqn(R,r)
+```
+```{r}
+Solve(R,r)
+```
+```{r}
+plotEqn3d(R,r)
+```
+```{r}
+echelon(R,r)
+```
+```{r}
+X <- matrix(c(1:9), 3, 3, TRUE)
+X
+```
+```{r}
+Y <- matrix(c(0,0,0, 1,5,6, 1,8,9), 3, 3, TRUE)
+Y
+```
+```{r}
+#2
+B <- matrix(c(1,1,3, 5,2,6, -2,-1,-3), 3,3, TRUE)
+B
+```
+```{r}
+#a
+b <- B%*%B%*%B
+b
+```
+```{r}
+#b
+#Bb=penggantian kolom 3 pada B dengan penjumlahan kolom 2&3 pada B
+Bb <- matrix(c(1,1,4, 5,2,8, -2,-1,-4), 3,3, TRUE)
+Bb
+```
+#5
+```{r}
+# Using for-loop and if-then, transform the following tasks:
+X <- matrix(c(1:9), 3, 3, TRUE)
+X
+```
+```{r}
+# into this matrix:
+Y <- matrix(c(0,1,1,0,5,8,0,6,9), 3,3)
+Y
+```
+```{r}
+for(p in 1:3){
+  for(q in 1:3) {
+    X[p, q] <- Y[p, q]
+  }
+}
+X
+```
+
+
